@@ -1,0 +1,35 @@
+path: /home/virus_relations/test_short  
+pmids: pmids.txt 
+output_tag: test_short 
+add_date: True  
+relations:
+- !!python/tuple [virus, gene]
+- !!python/tuple [virus, drug]
+# MENTIONS TYPES:
+# - virus
+# - gene
+# - drug
+# - mutation
+# - species
+# - cell_type
+# - cell_line
+# - disease
+# - DNA
+# - RNA
+#
+# DON'T CHANGE ANYTHING BEYOND THIS POINT
+# UNLESS YOU KNOW WHAT YOU ARE DOING!!
+#
+parse_species: True  # get virus from species mentions
+parse_disease: True  # get virus from disease mentions
+parse_genes: True
+db_path: /home/virus_relations/databases
+GPU: False
+n_processes:
+- 5  # low
+- 10  # high
+entrez_mail: your_user@ncbi.com
+entrez_api: yourAPIkeyFROMncbi
+entrez_maxtries: 20
+entrez_sleep_tries: 0.5
+
