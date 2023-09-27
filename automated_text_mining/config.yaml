@@ -23,7 +23,7 @@ relations:
 parse_species: True  # get virus from species mentions
 parse_disease: True  # get virus from disease mentions
 parse_genes: True
-db_path: /home/virus_relations/databases
+db_path: /home/viral_receptors/automated_text_mining/databases
 GPU: False
 n_processes:
 - 5  # low
