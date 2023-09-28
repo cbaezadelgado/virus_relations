@@ -202,7 +202,7 @@ plot_meanPR <- Best_model%>%group_by(model)%>%summarise(th_meanPR=mu_seq[which.m
 plot_meanPR
 
 #Find and save the best model ID
-Best_model_ID <- Best_model%>%filter(p_value<0.01)%>%filter(mu_mPR==max(mu_mPR))%>%pull(model) #If more than one model appears reduce delta in previous steps (line 184). 
+Best_model_ID <- Best_model%>%filter(p_value<0.01)%>%filter(mu_mPR==max(mu_mPR))%>%pull(model) #If more than one model appears reduce delta in previous steps (line 188). 
 Best_model_ID
 
 ##Average best model prediction and metrics ----
