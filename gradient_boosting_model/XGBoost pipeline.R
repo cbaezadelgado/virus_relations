@@ -7,10 +7,11 @@ library(tidyverse)
 library(doParallel)
 library(parallel)
 library(pROC)
+library(Ckmeans.1d.dp)
 ##Dataset----
 load("./Viral_Receptor_Prediction_Dataset.RData") #Modify the address to the location of the dataset file. 
 #Data: contains all variables needed for the boosting model.
-#Gene_info: contains gen names and ensembl and uniprot codes. 
+#Gene_info: contains gene names and ensembl and uniprot codes. 
 label <- Data[,1] # Extraction of the objective variable for future steps.
 
 #BAYESIAN OPTIMIZATION ----
@@ -207,7 +208,7 @@ Best_model_ID
 
 ##Average best model prediction and metrics ----
 preds <- unlist(Preds) #Unlist N*replicates cross validation model predictions.
-dim(preds) <- c(5112,N*replicates) #Give them proper dimensions.
+dim(preds) <- c(nrow(Data),N*replicates) #Give them proper dimensions.
 preds <- as.data.frame(cbind(ModelID,t(preds))) #Generate a data frame with model ID and predictions per row.
 mean_preds <- preds%>%group_by(ModelID)%>%summarise(across(everything(),mean)) #Calculate averaged predictions for each model.
 Avg_Pred <- cbind(Gene_info,Avg_model_pred=t(mean_preds[Best_model_ID,-1]),label) #Save averaged predictions for the best model.
