@@ -6,4 +6,4 @@ Scripts, pipelines, databases and models from the paper
 
 _Ana Valero-Rello, Carlos Baeza-Delgado, Iván Andreu-Moreno, and Rafael Sanjuán_
 
-_PLoS Pathog Feb 20;20(2):e1012021. doi: 10.1371/journal.ppat.1012021_
+_PLoS Pathog. 2024 Feb 20;20(2):e1012021. doi: 10.1371/journal.ppat.1012021_
